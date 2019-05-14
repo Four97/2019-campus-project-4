@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的申报-奖项申报</title>
+
+    <!-- 引入 Bootstrap -->
+    <link href="../../static/css/bootstrap.css" rel="stylesheet">
+
+    <!--导入script-->
+    <script src="../../static/js/jquery-1.11.2.js"></script>
+    <script src="../../static/js/bootstrap.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+        </button>
+                <a class="navbar-brand" href="../">奖项申报</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../awards">系统管理</a></li>
+                <li><a href="../myApply">个人中心</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2376200788 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">退出登录</a></li>
+                        <li><a href="#">切换账号</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    </div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="../awards">系统管理</a> <span class="divider">/</span>
+        </li>
+        <li>
+            <a href="./">奖项详情</a> <span class="divider">/</span>
+        </li>
+        <li class="divider">
+        </li>
+    </ul>
+    </div>
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="row clearfix">
+                    <div class="col-md-9 column">
+                        <div style="background-color:aquamarine;padding:30px;">
+
+							<span> 奖项名称&emsp;&emsp;</span>
+							<input type="text" style="width: 500px; height: 30px;" id="check_award_name">
+
+							<br/>
+							<br/>
+
+							<span> 评奖条件&emsp;&emsp;</span>
+							<input type="text" style="width: 500px;height: 200px;" id="check_award_if">
+
+							<br/>
+							<br/>
+							<span> 审核人员&emsp;&emsp;</span>
+							<input type="text" style="width: 500px; height: 30px;" id="check_reviewer">
+
+                            <br/>
+							<br/>
+							<span> 奖项状态&emsp;&emsp;</span>
+							<input type="text" style="width: 500px; height: 30px;" id="check_status">
+
+                            <br/>
+							<br/>
+							<span> 奖项级别&emsp;&emsp;</span>
+							<input type="text" style="width: 500px; height: 30px;" id="check_award_level">
+
+                            <br/>
+							<br/>
+							<span> 所属中心&emsp;&emsp;</span>
+							<input type="text" style="width: 500px; height: 30px;" id="check_organ">
+
+                            <br/>
+							<br/>
+							<span> 开始日期&emsp;&emsp;</span>
+							<input type="text" style="width: 500px; height: 30px;" id="check_start_time">
+
+                            <br/>
+							<br/>
+							<span> 结束日期&emsp;&emsp;</span>
+							<input type="text" style="width: 500px; height: 30px;" id="check_end_time">
+
+
+                        </div>
+
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center;">申请人/团队</th>
+                                    <th style="text-align:center;">申报状态</th>
+                                    <th style="text-align:center;">申报时间</th>
+                                    <th style="text-align:center;">事迹介绍</th>
+                                    <th style="text-align:center;">上传附件</th>
+                                    <th style="text-align:center;">评语</th>
+                                    <th style="text-align:center;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align:center;">
+                                <tr>
+                                    <td>xxx</td>
+                                    <td>审核中</td>
+                                    <td>2017-11-20 20:00:00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="链接">查看</a></td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style=
+    			"position: absolute;
+				left: 0;
+				top: 0;
+				width: 500px;left: 50%;margin-left: -25%;
+				height: 800px;
+				top:50px;
+				background-color:#E0EEE0;
+				border : 1px solid #B9D3EE;
+				display: none;
+				padding : 40px;"
+				onmousedown="move(this)"
+    			id="add">
+        <span> 获奖人/团队</span>
+        <input type="text" style="width:200px; height:30px;">
+        <span>&emsp;&emsp;</span>
+
+        <br/><br/>
+        <span> 事迹介绍&emsp;</span>
+        <input type="text" style="width:200px; height:300px;">
+
+        <br/><br/>
+        <span> 附件：&emsp;&emsp;<a href = "#">答辩.ppt</a></span>
+
+        <br/><br/>
+        <span> 评审结果：</span><span>&emsp;&emsp;已评奖</span>
+
+        <br/><br/>
+        <span> 评语：&emsp;</span> <input type="text" style="width:400px; height:30px;">
+
+    </div>
+
+
+</body>
+
+<script>
+
+	var name;
+
+	$(function() {
+		
+		var url = window.location.href;
+
+		var url_param = url.split("?")[1];
+		var url_param_arr = url_param.split("=");
+		var check_award_name = url_param_arr[1];
+		
+		$("#check_award_name").val(check_award_name);
+		
+		var url = "${SITE_URL}check_award/";
+		
+		var param = {
+				check_award_name : check_award_name
+			};
+		
+		$.get(url, param, function(res) {
+    		if(res.result) {
+    			
+    			$("#check_award_if").val(res.award_if);
+    			$("#check_award_level").val(res.award_level);
+    			$("#check_organ").val(res.organ);
+    			$("#check_start_time").val(res.start_time);
+    			$("#check_end_time").val(res.end_time);
+    			$("#check_status").val(res.status);
+    			$("#check_reviewer").val(res.reviewer);
+    		}
+		}, 'json');
+		
+	});
+	
+	//div窗体拖动功能
+	function move(obj,e){
+			var _move=false;//移动标记  
+			var _x,_y;//鼠标离控件左上角的相对位置  
+			$(obj).click(function(){  
+				//alert("click");//点击（松开后触发）  
+				}).mousedown(function(e){  
+				_move=true;  
+				_x=e.pageX-parseInt($(obj).css("left"));  
+				_y=e.pageY-parseInt($(obj).css("top"));  
+				//$(obj).fadeTo(20, 0.5);//点击后开始拖动并透明显示  
+			});  
+			$(document).mousemove(function(e){  
+				if(_move){  
+					var x=e.pageX-_x;//移动时根据鼠标位置计算控件左上角的绝对位置  
+					var y=e.pageY-_y;  
+					$(obj).css({top:y,left:x});//控件新位置  
+				}  
+			}).mouseup(function(){  
+			_move=false;  
+	   	 	//$(obj).fadeTo("fast", 1);//松开鼠标后停止移动并恢复成不透明  "fast":规定褪色效果的速度。
+	  		});  
+		}
+</script>
+
+</html>
